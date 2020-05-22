@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d62b1756-9cc0-404c-a1f5-050393ef9f4a" name="Default Changelist" comment="" />
+    <list default="true" id="d62b1756-9cc0-404c-a1f5-050393ef9f4a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Analyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Analyzer.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="186" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -14,8 +20,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1bp6nZRR4jVeyBdLANrpmrEpqf5" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -23,21 +34,36 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Analyzer.java" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.excludes" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Test">
     <configuration name="Analyzer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Analyzer" />
       <module name="networkopt-graphalgo" />
       <method v="2">
+        <option name="MakeNoErrorCheck" enabled="true" />
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <module name="networkopt-graphalgo" />
+      <method v="2">
+        <option name="MakeNoErrorCheck" enabled="true" />
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Analyzer" />
+      <item itemvalue="Application.Test" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
         <item itemvalue="Application.Analyzer" />
       </list>
     </recent_temporary>
@@ -60,29 +86,57 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="277" y="95" key="#Project_Structure/0.0.1368.872@0.0.1368.872" timestamp="1589316885877" />
-    <state x="140" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589317172740">
+    <state x="140" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590183720212">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="140" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1368.872@0.0.1368.872" timestamp="1589317172740" />
-    <state width="1326" height="227" key="GridCell.Tab.0.bottom" timestamp="1589317252922">
+    <state x="140" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1368.872@0.0.1368.872" timestamp="1590183720212" />
+    <state x="230" y="31" key="CommitChangelistDialog2" timestamp="1590187195897">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="227" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1589317252922" />
-    <state width="1326" height="227" key="GridCell.Tab.0.center" timestamp="1589317252921">
+    <state x="230" y="31" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1590187195897" />
+    <state x="466" y="192" key="FileChooserDialogImpl" timestamp="1590183740397">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="227" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1589317252921" />
-    <state width="1326" height="227" key="GridCell.Tab.0.left" timestamp="1589317252921">
+    <state x="466" y="192" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1590183740397" />
+    <state width="1326" height="227" key="GridCell.Tab.0.bottom" timestamp="1590187210222">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="227" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1589317252921" />
-    <state width="1326" height="227" key="GridCell.Tab.0.right" timestamp="1589317252922">
+    <state width="1326" height="227" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1590187210222" />
+    <state width="1326" height="227" key="GridCell.Tab.0.center" timestamp="1590187210222">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="227" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1589317252922" />
-    <state x="186" y="79" key="SettingsEditor" timestamp="1589317225256">
+    <state width="1326" height="227" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1590187210222" />
+    <state width="1326" height="227" key="GridCell.Tab.0.left" timestamp="1590187210222">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="186" y="79" key="SettingsEditor/0.0.1368.872@0.0.1368.872" timestamp="1589317225256" />
+    <state width="1326" height="227" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1590187210222" />
+    <state width="1326" height="227" key="GridCell.Tab.0.right" timestamp="1590187210222">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="227" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1590187210222" />
+    <state width="1326" height="281" key="GridCell.Tab.1.bottom" timestamp="1590186489190">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="281" key="GridCell.Tab.1.bottom/0.0.1368.872@0.0.1368.872" timestamp="1590186489190" />
+    <state width="1326" height="281" key="GridCell.Tab.1.center" timestamp="1590186489189">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="281" key="GridCell.Tab.1.center/0.0.1368.872@0.0.1368.872" timestamp="1590186489189" />
+    <state width="1326" height="281" key="GridCell.Tab.1.left" timestamp="1590186489189">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="281" key="GridCell.Tab.1.left/0.0.1368.872@0.0.1368.872" timestamp="1590186489189" />
+    <state width="1326" height="281" key="GridCell.Tab.1.right" timestamp="1590186489190">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="281" key="GridCell.Tab.1.right/0.0.1368.872@0.0.1368.872" timestamp="1590186489190" />
+    <state x="186" y="79" key="SettingsEditor" timestamp="1590183742673">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="186" y="79" key="SettingsEditor/0.0.1368.872@0.0.1368.872" timestamp="1590183742673" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/networkopt_graphalgo$Analyzer.ic" NAME="Analyzer Coverage Results" MODIFIED="1590181197697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/networkopt_graphalgo$Test.ic" NAME="Test Coverage Results" MODIFIED="1590181175815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
