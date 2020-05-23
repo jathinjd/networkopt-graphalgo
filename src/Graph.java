@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class Graph {
 
@@ -41,10 +43,10 @@ public class Graph {
             //Adding the edge with a random weight in the range [1, 1000]
             //Every time we create an edge, add the other node to neighbors
             //list of the adjacent node and add to degree
-            node.addNeighbor(prevNode);
-            prevNode.addNeighbor(node);
             int weight = (int) Math.floor(Math.random() * maxWeight + 1);
-            GraphEdge edge = new GraphEdge(node, prevNode, weight);
+            GraphEdge edge = new GraphEdge(edges.size(), node, prevNode, weight);
+            node.addNeighbor(edge.getLabel(), prevNode, edge);
+            prevNode.addNeighbor(edge.getLabel(), node, edge);
             edges.add(edge);
             totalDegree += 2; //Since the edge connects two nodes
         }
@@ -63,10 +65,10 @@ public class Graph {
             if(node1 == node2) continue;
             if(node1.isAdjacent(node2) || node2.isAdjacent(node1))
                 continue;
-            node1.addNeighbor(node2);
-            node2.addNeighbor(node1);
             int weight = (int) Math.floor(Math.random() * maxWeight + 1);
-            GraphEdge edge = new GraphEdge(node1, node2, weight);
+            GraphEdge edge = new GraphEdge(edges.size(), node1, node2, weight);
+            node1.addNeighbor(edge.getLabel(), node2, edge);
+            node2.addNeighbor(edge.getLabel(), node1, edge);
             edges.add(edge);
             totalDegree += 2;
         }
@@ -83,10 +85,10 @@ public class Graph {
                 //degree. If they are, we re-loop so we can randomize again
                 if(otherNode == node || otherNode.isAdjacent(node) || node.isAdjacent(otherNode)
                         || otherNode.getDegree() > upperPercent * nVertices) continue;
-                node.addNeighbor(otherNode);
-                otherNode.addNeighbor(node);
                 int weight = (int) Math.floor(Math.random() * maxWeight + 1);
-                GraphEdge edge = new GraphEdge(node, otherNode, weight);
+                GraphEdge edge = new GraphEdge(edges.size(), node, otherNode, weight);
+                node.addNeighbor(edge.getLabel(), otherNode, edge);
+                otherNode.addNeighbor(edge.getLabel(), node, edge);
                 edges.add(edge);
                 totalDegree += 2;
             }
@@ -94,29 +96,38 @@ public class Graph {
     }
 
     public static void main(String args[]){
+        //Prints out graph statistics for sparse and dense graphs generated with given
+        //number of vertices - verts;
         int verts = 100;
 
         Graph sparse = new Graph(verts, true);
         Graph dense = new Graph(verts, false);
 
         System.out.println("Sparse graph:");
-        System.out.println("Total degree: " + sparse.totalDegree + "  Average degree: " + (sparse.totalDegree / sparse.nVertices));
+        System.out.println("Total degree: " + sparse.totalDegree + "  Average degree: " +
+                (sparse.totalDegree / sparse.nVertices) + "  Total Edges = " + sparse.edges.size());
         for(int i = 0; i < verts; ++i){
             System.out.print(i + ": ");
-            List<GraphNode> neighbs = sparse.adjacencyList[i].getNeighbors();
-            for(GraphNode n : neighbs){
-                System.out.print(n.getNodeLabel() + "(" + "weight here" + ") ");
+            GraphNode currentNode = sparse.adjacencyList[i];
+            Map<Integer, GraphEdge> connectingEdges = currentNode.getEdges();
+            for(int eLabel : connectingEdges.keySet()){
+                GraphEdge cEdge = connectingEdges.get(eLabel);
+                GraphNode otherNode = cEdge.getOtherNode(currentNode);
+                System.out.print(otherNode.getNodeLabel() + "(" + cEdge.getWeight() + ") ");
             }
             System.out.print("\n");
         }
-
         System.out.println("Dense graph:");
-        System.out.println("Total degree: " + dense.totalDegree + "  Average degree: " + (dense.totalDegree / dense.nVertices));
+        System.out.println("Total degree: " + dense.totalDegree + "  Average degree: " +
+                (dense.totalDegree / dense.nVertices) + "  Total Edges = " + dense.edges.size());
         for(int i = 0; i < verts; ++i){
             System.out.print(i + ": ");
-            List<GraphNode> neighbs = dense.adjacencyList[i].getNeighbors();
-            for(GraphNode n : neighbs){
-                System.out.print(n.getNodeLabel() + "(" + "weight here" + ") ");
+            GraphNode currentNode = dense.adjacencyList[i];
+            Map<Integer, GraphEdge> connectingEdges = currentNode.getEdges();
+            for(int eLabel : connectingEdges.keySet()){
+                GraphEdge cEdge = connectingEdges.get(eLabel);
+                GraphNode otherNode = cEdge.getOtherNode(currentNode);
+                System.out.print(otherNode.getNodeLabel() + "(" + cEdge.getWeight() + ") ");
             }
             System.out.print("\n");
         }

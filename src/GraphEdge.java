@@ -1,21 +1,25 @@
 public class GraphEdge {
+    private int label;
     private GraphNode node1;
     private GraphNode node2;
     private int weight;
 
-    public GraphEdge(){
+    public GraphEdge(int label){
+        this.label = label;
         this.node1 = null;
         this.node2 = null;
         this.weight = 0;
     }
 
-    public GraphEdge(GraphNode node1, GraphNode node2){
+    public GraphEdge(int label, GraphNode node1, GraphNode node2){
+        this.label = label;
         this.node1 = node1;
         this.node2 = node2;
         this.weight = 0;
     }
 
-    public GraphEdge(GraphNode node1, GraphNode node2, int weight){
+    public GraphEdge(int label, GraphNode node1, GraphNode node2, int weight){
+        this.label = label;
         this.node1 = node1;
         this.node2 = node2;
         this.weight = weight;
@@ -33,6 +37,10 @@ public class GraphEdge {
             return node1;
         }
         return null;
+    }
+
+    public int getLabel(){
+        return label;
     }
 
 }
