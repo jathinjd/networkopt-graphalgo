@@ -31,4 +31,8 @@ public class GraphNode {
         return false;
     }
 
+    public List<GraphNode>  getNeighbors(){
+        return neighbors;
+    }
+
 }

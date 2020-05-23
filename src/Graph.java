@@ -8,6 +8,8 @@ public class Graph {
     private int nVertices;
     int totalDegree;
     int maxWeight = 1000;
+    double upperPercent = 0.25;
+    double lowerPercent = 0.15;
 
     public Graph(int nVertices){
         this.nVertices = nVertices;
@@ -71,6 +73,53 @@ public class Graph {
     }
 
     private void generateDenseGraph(){
+        for(int vertex = 0; vertex < nVertices; ++vertex){
+            GraphNode node = adjacencyList[vertex];
+            if(node.getDegree() > upperPercent * nVertices) continue;
+            while(node.getDegree() < lowerPercent * nVertices){
+                GraphNode otherNode = adjacencyList[(int) Math.floor(Math.random() * nVertices)];
+                //Check conditions to ensure randomly picked graphs are not
+                //same or already adjacent or they do not already have too high
+                //degree. If they are, we re-loop so we can randomize again
+                if(otherNode == node || otherNode.isAdjacent(node) || node.isAdjacent(otherNode)
+                        || otherNode.getDegree() > upperPercent * nVertices) continue;
+                node.addNeighbor(otherNode);
+                otherNode.addNeighbor(node);
+                int weight = (int) Math.floor(Math.random() * maxWeight + 1);
+                GraphEdge edge = new GraphEdge(node, otherNode, weight);
+                edges.add(edge);
+                totalDegree += 2;
+            }
+        }
+    }
+
+    public static void main(String args[]){
+        int verts = 100;
+
+        Graph sparse = new Graph(verts, true);
+        Graph dense = new Graph(verts, false);
+
+        System.out.println("Sparse graph:");
+        System.out.println("Total degree: " + sparse.totalDegree + "  Average degree: " + (sparse.totalDegree / sparse.nVertices));
+        for(int i = 0; i < verts; ++i){
+            System.out.print(i + ": ");
+            List<GraphNode> neighbs = sparse.adjacencyList[i].getNeighbors();
+            for(GraphNode n : neighbs){
+                System.out.print(n.getNodeLabel() + "(" + "weight here" + ") ");
+            }
+            System.out.print("\n");
+        }
+
+        System.out.println("Dense graph:");
+        System.out.println("Total degree: " + dense.totalDegree + "  Average degree: " + (dense.totalDegree / dense.nVertices));
+        for(int i = 0; i < verts; ++i){
+            System.out.print(i + ": ");
+            List<GraphNode> neighbs = dense.adjacencyList[i].getNeighbors();
+            for(GraphNode n : neighbs){
+                System.out.print(n.getNodeLabel() + "(" + "weight here" + ") ");
+            }
+            System.out.print("\n");
+        }
 
     }
 
