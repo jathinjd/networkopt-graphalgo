@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d62b1756-9cc0-404c-a1f5-050393ef9f4a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Analyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Analyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GraphEdge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GraphEdge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GraphNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GraphNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MaxHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MaxHeap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,15 +41,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
-  <component name="RunManager" selected="Application.SparseGraph">
-    <configuration name="Analyzer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Analyzer" />
-      <module name="networkopt-graphalgo" />
-      <method v="2">
-        <option name="MakeNoErrorCheck" enabled="true" />
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.MaxHeap">
     <configuration name="DenseGraph" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DenseGraph" />
       <module name="networkopt-graphalgo" />
@@ -62,6 +51,13 @@
     </configuration>
     <configuration name="Graph" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Graph" />
+      <module name="networkopt-graphalgo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MaxHeap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MaxHeap" />
       <module name="networkopt-graphalgo" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -83,19 +79,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Analyzer" />
       <item itemvalue="Application.Test" />
       <item itemvalue="Application.Graph" />
       <item itemvalue="Application.DenseGraph" />
       <item itemvalue="Application.SparseGraph" />
+      <item itemvalue="Application.MaxHeap" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MaxHeap" />
         <item itemvalue="Application.SparseGraph" />
         <item itemvalue="Application.DenseGraph" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.Graph" />
-        <item itemvalue="Application.Analyzer" />
       </list>
     </recent_temporary>
   </component>
@@ -146,22 +142,22 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="466" y="192" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1590183740397" />
-    <state width="1326" height="227" key="GridCell.Tab.0.bottom" timestamp="1590306119171">
+    <state width="1326" height="227" key="GridCell.Tab.0.bottom" timestamp="1590306281915">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="227" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1590306119171" />
-    <state width="1326" height="227" key="GridCell.Tab.0.center" timestamp="1590306119170">
+    <state width="1326" height="227" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1590306281915" />
+    <state width="1326" height="227" key="GridCell.Tab.0.center" timestamp="1590306281915">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="227" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1590306119170" />
-    <state width="1326" height="227" key="GridCell.Tab.0.left" timestamp="1590306119170">
+    <state width="1326" height="227" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1590306281915" />
+    <state width="1326" height="227" key="GridCell.Tab.0.left" timestamp="1590306281915">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="227" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1590306119170" />
-    <state width="1326" height="227" key="GridCell.Tab.0.right" timestamp="1590306119171">
+    <state width="1326" height="227" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1590306281914" />
+    <state width="1326" height="227" key="GridCell.Tab.0.right" timestamp="1590306281915">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="227" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1590306119171" />
+    <state width="1326" height="227" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1590306281915" />
     <state width="1326" height="281" key="GridCell.Tab.1.bottom" timestamp="1590222838575">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
