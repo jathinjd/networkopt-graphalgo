@@ -8,8 +8,8 @@ public class Analyzer {
 
         for(int pair = 0; pair < nGPairs; ++pair){
             //Create a pair of graphs - one sparse, one dense
-            SparseGraph sparseG = new SparseGraph(nVertices);
-            DenseGraph denseG = new DenseGraph(nVertices);
+            Graph sparseG = new SparseGraph(nVertices);
+            Graph denseG = new DenseGraph(nVertices);
 
             //Create source-destination pairs
             //Note: We use a single source-destination pair for sparse
