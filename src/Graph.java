@@ -1,6 +1,11 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 public class Graph {
 
     GraphNode[] adjacencyList;
+    private List<GraphEdge> graphEdges;
     private int nVertices;
     private int totalDegree;
     private int nEdges;
@@ -16,6 +21,7 @@ public class Graph {
     public Graph(int nVertices){
         this.nVertices = nVertices;
         adjacencyList = new GraphNode[nVertices];
+        graphEdges = new ArrayList<GraphEdge>();
         totalDegree = 0;
         nEdges = 0;
     }
@@ -60,10 +66,17 @@ public class Graph {
     }
 
     boolean addEdge(GraphNode node1, GraphNode node2, int weight){
-        node1.addEdge(new GraphEdge(node1, node2, weight));
-        node2.addEdge(new GraphEdge(node2, node1, weight));
+        GraphEdge edge1 =  new GraphEdge(node1, node2, weight);
+        GraphEdge edge2 =  new GraphEdge(node2, node1, weight);
+        node1.addEdge(edge1);
+        node2.addEdge(edge2);
         totalDegree += 2;
+        graphEdges.add(edge1);
         ++nEdges;
         return true;
+    }
+
+    List<GraphEdge> getGraphEdges(){
+        return graphEdges;
     }
 }

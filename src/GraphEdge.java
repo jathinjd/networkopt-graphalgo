@@ -27,4 +27,12 @@ public class GraphEdge {
     public int getEdgeLabel() {
         return edgeLabel;
     }
+
+    public GraphNode getSource(){
+        return sourceNode;
+    }
+
+    public GraphNode getDestination(){
+        return destinationNode;
+    }
 }

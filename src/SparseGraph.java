@@ -27,7 +27,8 @@ public class SparseGraph extends Graph {
         SparseGraph graph = new SparseGraph(verts);
         System.out.println("Dense graph:");
         System.out.println("Total degree: " + graph.getTotalDegree() + "  Average degree: " +
-                (graph.getTotalDegree() / graph.getNVertices()) + "  Total Edges = " + graph.getNEdges());
+                (graph.getTotalDegree() / graph.getNVertices()) + "  Total Edges = " + graph.getNEdges() +
+                " graphEdges set size: " + graph.getGraphEdges().size());
         for(int i = 0; i < verts; ++i){
             System.out.print(i + ": ");
             GraphNode currentNode = graph.adjacencyList[i];

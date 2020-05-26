@@ -32,7 +32,8 @@ public class DenseGraph extends Graph {
         DenseGraph graph = new DenseGraph(verts);
         System.out.println("Dense graph:");
         System.out.println("Total degree: " + graph.getTotalDegree() + "  Average degree: " +
-                (graph.getTotalDegree() / graph.getNVertices()) + "  Total Edges = " + graph.getNEdges());
+                (graph.getTotalDegree() / graph.getNVertices()) + "  Total Edges = " + graph.getNEdges() +
+                " graphEdges List size: " + graph.getGraphEdges().size());
         for(int i = 0; i < verts; ++i){
             System.out.print(i + ": ");
             GraphNode currentNode = graph.adjacencyList[i];
