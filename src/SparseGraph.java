@@ -9,8 +9,8 @@ public class SparseGraph extends Graph {
 
     private void generateSparseGraph(){
         while((super.getTotalDegree() / super.getNVertices()) < 6){
-            GraphNode node1 = adjacencyList[getRandomNodeLabel()];
-            GraphNode node2 = adjacencyList[getRandomNodeLabel()];
+            GraphNode node1 = adjacencyList.get(getRandomNodeLabel());
+            GraphNode node2 = adjacencyList.get(getRandomNodeLabel());
             //Check conditions to ensure randomly picked graphs are not
             //same or already adjacent. If they are, we re-loop so that
             //we can randomize again
@@ -31,7 +31,7 @@ public class SparseGraph extends Graph {
                 " graphEdges set size: " + graph.getGraphEdges().size());
         for(int i = 0; i < verts; ++i){
             System.out.print(i + ": ");
-            GraphNode currentNode = graph.adjacencyList[i];
+            GraphNode currentNode = graph.adjacencyList.get(i);
             Map<Integer, GraphEdge> connectingEdges = currentNode.getEdges();
             for(int eLabel : connectingEdges.keySet()){
                 GraphEdge cEdge = connectingEdges.get(eLabel);

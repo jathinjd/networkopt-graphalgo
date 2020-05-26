@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class Graph {
 
-    GraphNode[] adjacencyList;
+    Map<Integer, GraphNode> adjacencyList;
     private List<GraphEdge> graphEdges;
     private int nVertices;
     private int totalDegree;
@@ -20,7 +21,7 @@ public class Graph {
 
     public Graph(int nVertices){
         this.nVertices = nVertices;
-        adjacencyList = new GraphNode[nVertices];
+        adjacencyList = new HashMap<Integer, GraphNode>();
         graphEdges = new ArrayList<GraphEdge>();
         totalDegree = 0;
         nEdges = 0;
@@ -41,11 +42,11 @@ public class Graph {
     //Creates all nVertices and joins them in a line
     //Used for both graph types to avoid disconnected components
     void generateSkeleton(){
-        adjacencyList[0] = new GraphNode(0);
+        adjacencyList.put(0, new GraphNode(0));
         for(int vertex = 1; vertex < nVertices; ++vertex){
             GraphNode node = new GraphNode(vertex);
-            GraphNode prevNode = adjacencyList[vertex - 1];
-            adjacencyList[vertex] = node;
+            GraphNode prevNode = adjacencyList.get(vertex - 1);
+            adjacencyList.put(vertex, node);
             //Adding the edge with a random weight in the range [1, maxWeight]
             //Every time we create an edge, add the other node to neighbors
             //list of the adjacent node and add to degree

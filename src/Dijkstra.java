@@ -39,7 +39,7 @@ public class Dijkstra{
         unseen.remove(source);
         inTree.add(source);
         nodes[source].status = 2;
-        GraphNode sourceVertex = graph.adjacencyList[source];
+        GraphNode sourceVertex = graph.adjacencyList.get(source);
         for(int adjVertexLabel : sourceVertex.getEdges().keySet()){
             nodes[adjVertexLabel].status = 1;
             unseen.remove(adjVertexLabel);
@@ -62,7 +62,7 @@ public class Dijkstra{
             fringes.remove(maxbwfringe);
             inTree.add(maxbwfringe);
 
-            Map<Integer, GraphEdge> adjList = graph.adjacencyList[maxbwfringe].getEdges();
+            Map<Integer, GraphEdge> adjList = graph.adjacencyList.get(maxbwfringe).getEdges();
             for(int adjVertex : adjList.keySet()){
                 TreeNode node = nodes[adjVertex];
                 if(node.status == 0){
@@ -91,7 +91,7 @@ public class Dijkstra{
     }
 
     int getWeight(int node1Label, int node2Label){
-        return graph.adjacencyList[node1Label].getEdges().get(node2Label).getWeight();
+        return graph.adjacencyList.get(node1Label).getEdges().get(node2Label).getWeight();
     }
 
     public String getMaxBwPath(){

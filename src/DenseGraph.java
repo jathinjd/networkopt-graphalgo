@@ -12,10 +12,10 @@ public class DenseGraph extends Graph {
 
     private void generateDenseGraph(){
         for(int vertex = 0; vertex < getNVertices(); ++vertex){
-            GraphNode node = adjacencyList[vertex];
+            GraphNode node = adjacencyList.get(vertex);
             if(node.getDegree() > upperPercent * getNVertices()) continue;
             while(node.getDegree() < lowerPercent * getNVertices()){
-                GraphNode otherNode = adjacencyList[getRandomNodeLabel()];
+                GraphNode otherNode = adjacencyList.get(getRandomNodeLabel());
                 //Check conditions to ensure randomly picked graphs are not
                 //same or already adjacent or they do not already have too high
                 //degree. If they are, we re-loop so we can randomize again
@@ -36,7 +36,7 @@ public class DenseGraph extends Graph {
                 " graphEdges List size: " + graph.getGraphEdges().size());
         for(int i = 0; i < verts; ++i){
             System.out.print(i + ": ");
-            GraphNode currentNode = graph.adjacencyList[i];
+            GraphNode currentNode = graph.adjacencyList.get(i);
             Map<Integer, GraphEdge> connectingEdges = currentNode.getEdges();
             for(int eLabel : connectingEdges.keySet()){
                 GraphEdge cEdge = connectingEdges.get(eLabel);

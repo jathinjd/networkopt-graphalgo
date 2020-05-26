@@ -119,7 +119,7 @@ public class MaxHeap {
     int getWeight(TreeNode element){
         int nodeLabel1 = element.parentLabel;
         int nodeLabel2 = element.label;
-        return graph.adjacencyList[nodeLabel1].getEdges().get(nodeLabel2).getWeight();
+        return graph.adjacencyList.get(nodeLabel1).getEdges().get(nodeLabel2).getWeight();
     }
 
     /*public static void main(String args[]){
