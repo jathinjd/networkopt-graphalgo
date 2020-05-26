@@ -33,39 +33,54 @@ public class Analyzer {
                 long startTime = 0; long endTime = 0;
 
                 startTime = System.nanoTime();
-                //~~~~~~~~~~~~~Call Dijkstra without Heap - sparseG, sdPair as args
+                Dijkstra dijkstraSparse = new Dijkstra(sparseG, source, destination);
                 endTime = System.nanoTime();
-                System.out.println("Dijkstra without Heap on sparse graph " +
-                        (pair + 1) + ": " + (endTime - startTime) + " ns");
-                startTime = System.nanoTime();
-                //~~~~~~~~~~~~~Call Dijkstra without Heap - denseG, sdPair as args
-                endTime = System.nanoTime();
-                System.out.println("Dijkstra without Heap on dense graph " +
-                        (pair + 1) + ": " + (endTime - startTime) + " ns");
+                System.out.println("Dijkstra on sparse graph " + (pair + 1) + ":");
+                System.out.println("Maximum bandwidth: " + dijkstraSparse.getMaxBw());
+                System.out.println("Maximum bandwidth path: " + dijkstraSparse.getMaxBwPath());
+                System.out.println("Execution Time: " + (endTime - startTime) + " ns");
 
                 startTime = System.nanoTime();
-                //~~~~~~~~~~~~~Call Dijkstra with Heap = sparseG, sdPair as args
+                Dijkstra dijkstraDense = new Dijkstra(sparseG, source, destination);
                 endTime = System.nanoTime();
-                System.out.println("Dijkstra with Heap on sparse graph " +
-                        (pair + 1) + ": " + (endTime - startTime) + " ns");
+                System.out.println("Dijkstra on dense graph " + (pair + 1) + ":");
+                System.out.println("Maximum bandwidth: " + dijkstraDense.getMaxBw());
+                System.out.println("Maximum bandwidth path: " + dijkstraDense.getMaxBwPath());
+                System.out.println("Execution Time: " + (endTime - startTime) + " ns");
 
                 startTime = System.nanoTime();
-                //~~~~~~~~~~~~~Call Dijkstra with Heap = denseG, sdPair as args
+                DijkstraHeap dijkstraHeapSparse = new DijkstraHeap(sparseG, source, destination);
                 endTime = System.nanoTime();
-                System.out.println("Dijkstra with Heap on dense graph " +
-                        (pair + 1) + ": " + (endTime - startTime) + " ns");
+                System.out.println("Dijkstra with Heap on sparse graph " + (pair + 1) + ":");
+                System.out.println("Maximum bandwidth: " + dijkstraHeapSparse.getMaxBw());
+                System.out.println("Maximum bandwidth path: " + dijkstraHeapSparse.getMaxBwPath());
+                System.out.println("Execution Time: " + (endTime - startTime) + " ns");
 
                 startTime = System.nanoTime();
-                //~~~~~~~~~~~~~Call Kruskal with Heap = sparseG, sdPair as args
+                DijkstraHeap dijkstraHeapDense = new DijkstraHeap(sparseG, source, destination);
                 endTime = System.nanoTime();
-                System.out.println("Kruskal with Heap on sparse graph " +
-                        (pair + 1) + ": " + (endTime - startTime) + " ns");
+                System.out.println("Dijkstra with Heap on dense graph " + (pair + 1) + ":");
+                System.out.println("Maximum bandwidth: " + dijkstraHeapDense.getMaxBw());
+                System.out.println("Maximum bandwidth path: " + dijkstraHeapDense.getMaxBwPath());
+                System.out.println("Execution Time: " + (endTime - startTime) + " ns");
+
+                /*
+                startTime = System.nanoTime();
+                //DijkstraHeap kruskalSparse = new DijkstraHeap(sparseG, source, destination);
+                endTime = System.nanoTime();
+                System.out.println("Kruskal on sparse graph " + (pair + 1) + ":");
+                System.out.println("Maximum bandwidth: " + kruskalSparse.getMaxBw());
+                System.out.println("Maximum bandwidth path: " + kruskalSparse.getMaxBwPath());
+                System.out.println("Execution Time: " + (endTime - startTime) + " ns");
 
                 startTime = System.nanoTime();
-                //~~~~~~~~~~~~~Call Kruskal with Heap = denseG, sdPair as args
+                //DijkstraHeap kruskalDense = new DijkstraHeap(sparseG, source, destination);
                 endTime = System.nanoTime();
-                System.out.println("Kruskal with Heap on dense graph " +
-                        (pair + 1) + ": " + (endTime - startTime) + " ns");
+                System.out.println("Kruskal on dense graph " + (pair + 1) + ":");
+                System.out.println("Maximum bandwidth: " + kruskalDense.getMaxBw());
+                System.out.println("Maximum bandwidth path: " + kruskalDense.getMaxBwPath());
+                System.out.println("Execution Time: " + (endTime - startTime) + " ns");
+                */
 
                 System.out.println();
             }

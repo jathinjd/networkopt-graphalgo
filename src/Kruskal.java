@@ -36,7 +36,7 @@ public class Kruskal {
         //Since we are using path compression, time taken for
         //checking this conditions is just O(1)
         mstEdges = new ArrayList<GraphEdge>();
-        while(!heap.isEmpty() && !sndInTree()){
+        while(!heap.isEmpty()){
             GraphEdge edge = heap.poll();
             int sourceVertex = edge.getSource().getNodeLabel();
             int destVertex = edge.getDestination().getNodeLabel();
@@ -44,8 +44,8 @@ public class Kruskal {
             int root2 = dSet.findSet(destVertex);
 
             if(root1 == root2) continue;
-            dSet.union(sourceVertex, destVertex);
-            mstEdges.add(edge);
+                dSet.union(sourceVertex, destVertex);
+                mstEdges.add(edge);
         }
         //By the end of this while loop, we should have all the edges we need
         //in the mstEdges array
@@ -119,9 +119,10 @@ public class Kruskal {
     }
 
     public static void main(String[] args){
-        Graph testgraph = new SparseGraph(10);
+        Graph testgraph = new SparseGraph(100);
         Kruskal gkrus = new Kruskal(testgraph, 5, 6);
         List<GraphEdge> spanningTreeEdges = gkrus.runKruskal();
+        System.out.println(spanningTreeEdges.size());
         Graph mst = gkrus.makeMST(spanningTreeEdges);
         System.out.println(mst.adjacencyList.size());
         System.out.println("Total degree: " + mst.getTotalDegree() + "  Average degree: " +
